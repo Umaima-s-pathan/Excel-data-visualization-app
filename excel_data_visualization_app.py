@@ -10,6 +10,7 @@ Original file is located at
 import streamlit as st
 import pandas as pd
 import openai
+import openpyxl
 import matplotlib.pyplot as plt
 import plotly.express as px
 

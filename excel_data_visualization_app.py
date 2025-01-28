@@ -67,3 +67,12 @@ if st.button("Generate Insights"):
     insights = generate_insights(df.to_dict())
     st.write("Insights from OpenAI:", insights)
 
+
+
+
+
+
+
+
+""" Build by Umaima Pathan"""
+

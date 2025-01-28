@@ -46,12 +46,20 @@ if uploaded_file is not None:
 
 # Function to generate insights using OpenAI
 def generate_insights(data):
-    openai.api_key = openai_api_key
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": f"Analyze this data: {data}"}]
-    )
-    return response.choices[0].message['content']
+    if not openai_api_key:  # Check if the API key is provided
+        st.error("Please enter your OpenAI API key.")
+        return None
+
+    openai.api_key = openai_api_key  # Set the API key
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": f"Analyze this data: {data}"}]
+        )
+        return response.choices[0].message['content']
+    except Exception as e:
+        st.error(f"Error with OpenAI API: {e}")
+        return None
 
 
 # Button to generate insights

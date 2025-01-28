@@ -45,16 +45,16 @@ if uploaded_file is not None:
             st.plotly_chart(fig)
 
 # Function to generate insights using OpenAI
-##def generate_insights(data):
- ##   openai.api_key = myapikey
- ##   response = openai.ChatCompletion.create(
-  ##      model="gpt-3.5-turbo",
-  ##      messages=[{"role": "user", "content": f"Analyze this data: {data}"}]
-#    )
-   #   return response.choices[0].message['content']
+def generate_insights(data):
+    openai.api_key = openai_api_key
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": f"Analyze this data: {data}"}]
+    )
+      return response.choices[0].message['content']
 
 # Button to generate insights
-#if st.button("Generate Insights"):
- #   insights = generate_insights(df.to_dict())
- #   st.write("Insights from OpenAI:", insights)
+if st.button("Generate Insights"):
+    insights = generate_insights(df.to_dict())
+    st.write("Insights from OpenAI:", insights)
 

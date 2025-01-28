@@ -46,11 +46,11 @@ if uploaded_file is not None:
 
 # Function to generate insights using OpenAI
 def generate_insights(data):
-if not openai_api_key:
+    if not openai_api_key:
         st.error("Please enter your OpenAI API key.")
         return None
 
-    openai.api_key = Secret key
+    openai.api_key = openai_api_key  # Set the API key
     try:
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",

@@ -3,3 +3,4 @@ OpenAI
 Pandas
 Matplotlib 
 Plotly 
+Openpyxl

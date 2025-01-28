@@ -48,7 +48,7 @@ if uploaded_file is not None:
 def generate_insights(data):
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o-mini",
             messages=[{"role": "user", "content": f"Analyze this data: {data}"}]
         )
         return response.choices[0].message['content']

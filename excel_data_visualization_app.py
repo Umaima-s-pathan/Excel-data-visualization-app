@@ -46,7 +46,7 @@ if uploaded_file is not None:
 
 # Function to generate insights using OpenAI
 def generate_insights(data):
-    openai.api_key = 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
+    openai.api_key = <API-KEY>
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": f"Analyze this data: {data}"}]

@@ -44,11 +44,13 @@ if uploaded_file is not None:
             fig = px.scatter(df, x=df.index, y=column_to_plot, title=f'Scatter Plot of {column_to_plot}')
             st.plotly_chart(fig)
 
- if not openai_api_key:
+# Function to generate insights using OpenAI
+def generate_insights(data):
+if not openai_api_key:
         st.error("Please enter your OpenAI API key.")
         return None
 
-    openai.api_key = myapikey
+    openai.api_key = Secret key
     try:
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",

@@ -1,5 +1,5 @@
 Streamlit
-OpenAI
+OpenAI==0.28
 Pandas
 Matplotlib 
 Plotly 

@@ -14,11 +14,11 @@ import openpyxl
 import matplotlib.pyplot as plt
 import plotly.express as px
 
+# Set your OpenAI API key directly here
+openai.api_key = "apikey"
+
 # Set the title of the app
 st.title("Excel Data Visualization App")
-
-# Sidebar for API Key input
-openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password")
 
 # File uploader for Excel files
 uploaded_file = st.file_uploader("Upload an Excel file", type=["xlsx"])
@@ -46,11 +46,6 @@ if uploaded_file is not None:
 
 # Function to generate insights using OpenAI
 def generate_insights(data):
-    if not openai_api_key:  # Check if the API key is provided
-        st.error("Please enter your OpenAI API key.")
-        return None
-
-    openai.api_key = openai_api_key  # Set the API key
     try:
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",

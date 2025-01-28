@@ -51,7 +51,7 @@ def generate_insights(data):
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": f"Analyze this data: {data}"}]
     )
-      return response.choices[0].message['content']
+    return response.choices[0].message['content']
 
 # Button to generate insights
 if st.button("Generate Insights"):

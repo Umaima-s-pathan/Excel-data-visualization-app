@@ -50,7 +50,7 @@ def generate_insights(data):
         st.error("Please enter your OpenAI API key.")
         return None
 
-    openai.api_key = myapikey
+    openai.api_key =myapikey
     try:
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",

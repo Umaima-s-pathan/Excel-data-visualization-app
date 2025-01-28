@@ -44,7 +44,7 @@ if uploaded_file is not None:
             fig = px.scatter(df, x=df.index, y=column_to_plot, title=f'Scatter Plot of {column_to_plot}')
             st.plotly_chart(fig)
 
-# Function to generate insights using OpenAI
+"""# Function to generate insights using OpenAI
 ##def generate_insights(data):
  ##   openai.api_key = myapikey
  ##   response = openai.ChatCompletion.create(
@@ -56,5 +56,5 @@ if uploaded_file is not None:
 # Button to generate insights
 if st.button("Generate Insights"):
     insights = generate_insights(df.to_dict())
-    st.write("Insights from OpenAI:", insights)
+    st.write("Insights from OpenAI:", insights)"""
 

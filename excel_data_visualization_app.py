@@ -21,7 +21,7 @@ st.title("Excel Data Visualization App")
 openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password")
 
 # File uploader for Excel files
-uploaded_file = st.file_uploader("Upload an Excel file", type=["xlsx"])
+uploaded_file = st.file_uploader("Upload an Excel file", type=["xlsx","csv"])
 
 if uploaded_file is not None:
     # Read the Excel file
